@@ -26,8 +26,11 @@ public class TodoTaskServices {
         return todoTaskRespository.findById(id);
     }
 
-    // buscar task por todoId
-
+    // obtener task por todoId
+    public Optional<TodoTask> findTodoTaskById(Long todoId){
+        return todoTaskRespository.findById(todoId);
+    }
+    
     // Crear nueva tarea
     public TodoTask save(TodoTask todotask){
         return todoTaskRespository.save(todotask);
