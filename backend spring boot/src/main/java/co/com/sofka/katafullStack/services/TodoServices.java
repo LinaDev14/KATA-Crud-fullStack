@@ -12,36 +12,36 @@ import java.util.Optional;
 public class TodoServices {
 
     @Autowired
-    private TodoRespository todorepository;
+    private TodoRespository todoRepository;
 
     // listar todas las tareas
     public List<Todo> listTodo(){
-        return todorepository.findAll();
+        return todoRepository.findAll();
     }
 
     // buscar tarea por id
     public Optional<Todo> findById(Long id){
-        return todorepository.findById(id);
+        return todoRepository.findById(id);
     }
 
     // Crear nueva tarea
     public Todo save(Todo todo){
-        return todorepository.save(todo);
+        return todoRepository.save(todo);
     }
 
     // Actualizar tarea
     public Todo updateTodo(Todo todo) {
-        Optional<Todo> TodoData = todorepository.findById(todo.getId());
+        Optional<Todo> TodoData = todoRepository.findById(todo.getId());
 
         if(TodoData.isEmpty()){
             throw new IllegalArgumentException("La tarea no se encuentra en la base de datos");
         }
 
-        return todorepository.save(todo);
+        return todoRepository.save(todo);
     }
 
     // borrar tarea
     public void deleteById(Long id){
-        todorepository.deleteById(id);
+        todoRepository.deleteById(id);
     }
 }
