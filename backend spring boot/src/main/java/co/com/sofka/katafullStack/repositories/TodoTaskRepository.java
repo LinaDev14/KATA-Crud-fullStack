@@ -9,7 +9,7 @@ import java.util.List;
 public interface TodoTaskRepository extends CrudRepository<TodoTask, Long> {
 
     // buscar task por id
-    TodoTask findTodoTaskById(Long todoId);
+    List <TodoTask> findAllByTodoId(Long todoId);
     // Listar tareas todoTask
     List<TodoTask> findAll();
 }

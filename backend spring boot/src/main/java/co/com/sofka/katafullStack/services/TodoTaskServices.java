@@ -27,8 +27,8 @@ public class TodoTaskServices {
     }
 
     // obtener task por todoId
-    public Optional<TodoTask> findTodoTaskById(Long todoId){
-        return todoTaskRespository.findById(todoId);
+    public List<TodoTask> findAllByTodoId(Long todoId){
+        return todoTaskRespository.findAllByTodoId(todoId);
     }
 
     // Crear nueva tarea
