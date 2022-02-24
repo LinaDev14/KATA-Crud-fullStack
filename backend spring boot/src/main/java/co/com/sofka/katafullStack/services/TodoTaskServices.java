@@ -16,8 +16,8 @@ public class TodoTaskServices {
     @Autowired
     private TodoTaskRepository todoTaskRespository;
 
-    // listar todas las tareas
-    public List<TodoTask> listTodo(){
+    // listar todo el grupo de tareas
+    public List<TodoTask> listTodoTask(){
         return todoTaskRespository.findAll();
     }
 
@@ -30,7 +30,7 @@ public class TodoTaskServices {
     public Optional<TodoTask> findTodoTaskById(Long todoId){
         return todoTaskRespository.findById(todoId);
     }
-    
+
     // Crear nueva tarea
     public TodoTask save(TodoTask todotask){
         return todoTaskRespository.save(todotask);
@@ -51,5 +51,6 @@ public class TodoTaskServices {
     public void deleteById(Long id){
         todoTaskRespository.deleteById(id);
     }
+
 }
 
