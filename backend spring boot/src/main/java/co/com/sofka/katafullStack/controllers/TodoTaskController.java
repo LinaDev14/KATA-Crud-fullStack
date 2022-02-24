@@ -49,7 +49,7 @@ public class TodoTaskController {
         return todoTaskServices.save(todotask);
     }
 
-    // Actualizar tarea
+    // Actualizar task en tareas
     public TodoTask updateTodo(TodoTask todotask) {
         Optional<TodoTask> TodoTaskData = todoTaskServices.findById(todotask.getId());
 
@@ -60,7 +60,7 @@ public class TodoTaskController {
         return todoTaskServices.save(todotask);
     }
 
-    // borrar tarea
+    // borrar task en tareas
     public void deleteById(Long id){
         todoTaskServices.deleteById(id);
     }
