@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d8b04051-6f10-46a9-b374-05f32c177704" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../backend spring boot/src/main/java/co/com/sofka/katafullStack/controllers/TodoTaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend spring boot/src/main/java/co/com/sofka/katafullStack/controllers/TodoTaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Providers/ProviderTodo.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FormTodo/FormTodo.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListToDo/ListToDo.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Todo/Todo.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TodoTask/TodoTask.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/Reducer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/initialState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/initialState.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +46,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="settings.editor.splitter.proportion" value="0.22888888" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -66,7 +61,7 @@
       <workItem from="1645733432274" duration="121000" />
       <workItem from="1645733604822" duration="70000" />
       <workItem from="1645733722078" duration="1290000" />
-      <workItem from="1645735225805" duration="564000" />
+      <workItem from="1645735225805" duration="2256000" />
     </task>
     <servers />
   </component>

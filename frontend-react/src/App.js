@@ -1,7 +1,11 @@
+import React from 'react';
+
+//import components
+
 
 function App() {
   return (
-      <div className="App">
+      <div>
 
       </div>
   );
