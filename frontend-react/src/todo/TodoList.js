@@ -20,7 +20,18 @@ const TodoList = (TaskListId) => {
                     type: "update-list", todos
                 })
             })
-    }, [dispatch])
+    }, [dispatch]);
+
+    const onDelete = (id) => {
+        fetch(URL_API + "/" + delete + id, {
+            method: "DELETE"
+        })
+            .then((todo) => {
+                dispatch ({
+                    type: "delete-item", id
+                })
+            })
+    }
 
 }
 
