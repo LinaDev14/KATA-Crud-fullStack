@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 // import components
 import {URL_API} from '../utils/Data';
 import {Store} from '../utils/initialState';
+import {TodoTaskList} from '../todoTask/TodoTaskList';
 
 const TodoList = () => {
 
@@ -42,7 +43,9 @@ const TodoList = () => {
         <>
             {
                 todoList.list.map((todo) => {
-                    return <div key={todo.id}>{todo.name}</div>
+                    //return <div key={todo.id}>{todo.name}</div>
+                    return <TodoTaskList id={todo.id} name={todo.name} key={todo.id}/>
+
                 })
             }
         </>
