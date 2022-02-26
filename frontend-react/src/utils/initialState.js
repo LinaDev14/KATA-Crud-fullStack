@@ -1,6 +1,6 @@
-import React, {createContext, useReducer} from "react";
+import React, {createContext} from "react";
 
-// import components
+// import components, useReducer
 
 const initialState = {
     todo :{
