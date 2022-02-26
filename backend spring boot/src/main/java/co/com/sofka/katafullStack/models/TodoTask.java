@@ -21,4 +21,5 @@ public class TodoTask {
     private Long id;
     private String name;
     private Long todoId;
+    private Boolean completed;
 }

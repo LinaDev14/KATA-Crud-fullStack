@@ -39,7 +39,7 @@ public class TodoTaskController {
 
     // Buscar por todoId
     // http://localhost:8080/api/tasks/todoId/{id}
-    @GetMapping("/tasks/todoId/{id}")
+    @GetMapping("/tasks/todoId/{todoId}")
     public List<TodoTask> findAllByTodoId(@PathVariable Long todoId){
         return todoTaskServices.findAllByTodoId(todoId);
     }
@@ -65,7 +65,7 @@ public class TodoTaskController {
     }
 
     // borrar task en tareas
-    // http:localhost:8080/api/task/delete/{id}
+    // http://localhost:8080/api/task/delete/{id}
     @DeleteMapping("task/delete/{id}")
     public void deleteById(Long id){
         todoTaskServices.deleteById(id);
