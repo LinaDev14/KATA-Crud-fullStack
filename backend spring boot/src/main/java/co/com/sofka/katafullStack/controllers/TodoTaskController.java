@@ -38,18 +38,22 @@ public class TodoTaskController {
     }
 
     // Buscar por todoId
+    // http://localhost:8080/api/tasks/todoId/{id}
     @GetMapping("/tasks/todoId/{id}")
     public List<TodoTask> findAllByTodoId(@PathVariable Long todoId){
         return todoTaskServices.findAllByTodoId(todoId);
     }
     
     // Crear nuevo task en tareas
-    @PostMapping("task/create")
+    // http://localhost:8080/api/task/create
+    @PostMapping("/task/create")
     public TodoTask save(@RequestBody TodoTask todotask){
         return todoTaskServices.save(todotask);
     }
 
     // Actualizar task en tareas
+    // http://localhost:8080/api/task/updateTodo
+    @PutMapping("/task/updateTodo")
     public TodoTask updateTodo(TodoTask todotask) {
         Optional<TodoTask> TodoTaskData = todoTaskServices.findById(todotask.getId());
 
@@ -61,6 +65,8 @@ public class TodoTaskController {
     }
 
     // borrar task en tareas
+    // http:localhost:8080/api/task/delete/{id}
+    @DeleteMapping("task/delete/{id}")
     public void deleteById(Long id){
         todoTaskServices.deleteById(id);
     }

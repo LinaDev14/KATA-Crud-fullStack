@@ -5,6 +5,7 @@ import {URL_API} from '../utils/Data';
 import {Store} from '../utils/initialState';
 
 const TodoList = (TaskListId) => {
+
     const {dispatch, state: {
         todo
     }} = useContext(Store);
@@ -40,12 +41,12 @@ const TodoList = (TaskListId) => {
         })
     }
 
-    const onEditComplete = (event, item) => {
+    const onEditComplete = (e, item) => {
         const request = {
             name: item.name,
             id: item.id,
             idList: item.idList,
-            completed: event.target.checked
+            completed: e.target.checked
         }
 
         fetch(URL_API + "/todo/update", {
@@ -63,6 +64,36 @@ const TodoList = (TaskListId) => {
             })
     }
 
+return <div>
+    <table>
+        <thead>
+            <tr>
+                <td></td>
+                <td>ID</td>
+                <td>Tarea</td>
+                <td>¿Completado?</td>
+            </tr>
+        </thead>
+
+        <tbody>
+                {currentList.map((item) => {
+                    return <tr key={item.id}>
+                        <td>
+                            <input
+                            type = "checkbox"
+                            defaultChecked={item.completed}
+                            onChange={(e) => onEditComplete(e, item)}/>
+                        </td>
+                        <td>{item.id}</td>
+                        <td>{item.name}</td>
+                        <td><button type="button" onClick={() => onEdit(item)}>Editar</button></td>
+                        <td><button type="button" onClick={() => onEdit(item.id)}>Eliminar</button></td>
+                    </tr>
+                })}
+        </tbody>
+    </table>
+</div>
 }
+
 
 export {TodoList}
