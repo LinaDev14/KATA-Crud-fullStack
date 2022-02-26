@@ -1,0 +1,31 @@
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 10px;
+    border-top: 6px solid #1535e7;
+}
+
+.header__button {
+    font-family: 'Poppins', sans-serif;
+    color: #1535e7;
+    margin: 10px 35px 0px 0px;
+    width: 150px;
+    height: 40px;
+    border: 2px solid rgb(88, 233, 201);
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.header__button:hover {
+    border: 2px dashed #2f3542;
+    background-color: #ffa502;
+    color: #2f3542;
+}

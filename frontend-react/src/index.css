@@ -1,13 +1,56 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;500&family=Roboto:wght@100;300&display=swap');
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  background-color: #fff;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+/*
+*Dark mode
+*/
+
+.giphos__container.dark {
+  background-color: #201e1e;
+  transition: all 1s ease;
+}
+
+.dark .header__button {
+  background-color: #201e1e;
+  border: 2px solid white;
+  color: white;
+}
+
+.dark h1,
+.dark h3 {
+  color: #f9ca24;
+  font-weight: 400;
+}
+
+.dark .container__gifs {
+  background-color: #292323e8;
+}
+
+.dark .search__input {
+  background-color: #201e1e;
+  transition: all 1s ease;
+  color: #f7d794;
+}
+
+.dark .search__containerList {
+  border: 1px solid white;
+}
+
+.dark .search__containerList p {
+  color: #fff;
+  transition: all 1s ease;
+}
+
+.dark .error__container {
+  color: white;
 }
