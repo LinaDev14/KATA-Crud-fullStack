@@ -55,6 +55,14 @@
   color: white;
 }
 
+.dark .task_container{
+  background-color: #292323e8
+}
+
+.dark .header{
+  background-color: #292323e8
+}
+
 .dark .footer__container {
   background: #ecf0f1;
   color: #2c3e50;

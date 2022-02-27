@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import {URL_API} from "../utils/Data";
-import {TodoForm} from "../todo/TodoForm";
 import {TodoTaskForm} from "./TodoTaskForm";
 
 const TodoTaskList = ({id, name}) => {
@@ -27,7 +26,7 @@ const TodoTaskList = ({id, name}) => {
 
     return(
         <>
-            <div>{name}</div>
+
             {
                 taskList.list.map((task) => {
                     return <TodoTaskForm key={task.id} task={task} />

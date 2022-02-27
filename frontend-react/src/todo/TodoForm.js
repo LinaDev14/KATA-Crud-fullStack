@@ -1,29 +1,62 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 // import styles
 import styles from './TodoForm.module.css';
 // import image
 import task from '../images/task.svg';
-//import componets
+//import components
 import {CreateTaskTodo} from '../Modals/CreateTaskTodo'
+import {CardTodo} from '../Card/CardTodo';
+import {URL_API} from "../utils/Data";
 
 const TodoForm = () => {
 
     const [modal, setModal] = useState(false);
     const [taskList, setTaskList] = useState([])
 
+    useEffect(() => {
+        let arr = localStorage.getItem("taskList")
+
+        if(arr){
+            let obj = JSON.parse(arr)
+            setTaskList(obj)
+        }
+    }, [])
+
+
+    const deleteTask = (index) => {
+        let tempList = taskList
+        tempList.splice(index, 1)
+        localStorage.setItem("taskList", JSON.stringify(tempList))
+        setTaskList(tempList)
+        window.location.reload()
+    }
+
+    const updateListArray = (obj, index) => {
+        let tempList = taskList
+        tempList[index] = obj
+        localStorage.setItem("taskList", JSON.stringify(tempList))
+        setTaskList(tempList)
+        window.location.reload()
+    }
 
     const toggle = () => {
         setModal(!modal);
     }
 
     const saveTask = (taskObj) => {
-        let tempList = taskList
-        tempList.push(taskObj)
-        localStorage.setItem("taskList", JSON.stringify(tempList))
-        setTaskList(taskList)
+        fetch(URL_API + "/todo/create", {
+            method: "POST",
+            body: JSON.stringify({name: taskObj.Name}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((response) => response.json())
+            .then()
         setModal(false)
     }
+
 
     return (
         <>
@@ -35,8 +68,8 @@ const TodoForm = () => {
         </div>
         <div className={styles.search__container}>
                 <button className ={styles.buttom_input} onClick = {() => setModal(true)} >New Todo</button>
-                <CreateTaskTodo toggle = {toggle} modal = {modal} save = {saveTask}/>
         </div>
+            <CreateTaskTodo toggle = {toggle} modal = {modal} save = {saveTask}/>
         </>
     )
 
