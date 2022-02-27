@@ -31,16 +31,12 @@ const CreateTaskTodo = ({modal, toggle, save}) => {
 
     return (
         <Modal isOpen={modal} toggle={toggle}>
-            <ModalHeader toggle={toggle}>Create Task</ModalHeader>
+            <ModalHeader toggle={toggle}>Create Todo</ModalHeader>
             <ModalBody>
 
                 <div className = "form-group">
-                    <label>Task Name</label>
+                    <label>Todo Name</label>
                     <input type="text" className = "form-control" value = {taskName} onChange = {handleChange} name = "taskName"/>
-                </div>
-                <div className = "form-group">
-                    <label>Description</label>
-                    <textarea rows = "5" className = "form-control" value = {description} onChange = {handleChange} name = "description"/>
                 </div>
 
             </ModalBody>
