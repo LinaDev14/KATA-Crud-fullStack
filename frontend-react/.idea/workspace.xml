@@ -8,9 +8,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logo/LinkLogo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logo/LinkLogo.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/task.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/task.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/todo/TodoForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/todo/TodoForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/todo/TodoForm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/todo/TodoForm.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/todo/TodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/todo/TodoList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/todoTask/TodoTaskForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/todoTask/TodoTaskForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/todoTask/TodoTaskList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/todoTask/TodoTaskList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Reducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/initialState.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -74,7 +82,9 @@
       <workItem from="1645735225805" duration="3054000" />
       <workItem from="1645819941345" duration="8392000" />
       <workItem from="1645900484748" duration="3493000" />
-      <workItem from="1645904645142" duration="13263000" />
+      <workItem from="1645904645142" duration="13684000" />
+      <workItem from="1645922416476" duration="1194000" />
+      <workItem from="1645934791399" duration="5855000" />
     </task>
     <servers />
   </component>

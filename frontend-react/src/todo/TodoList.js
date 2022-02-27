@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 
 // import components
 import {URL_API} from '../utils/Data';
-import {Store} from '../utils/initialState';
 import {TodoTaskList} from '../todoTask/TodoTaskList';
 import {TodoForm} from "./TodoForm";
 

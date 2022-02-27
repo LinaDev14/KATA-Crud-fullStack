@@ -1,0 +1,142 @@
+/*import url fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=IBM+Plex+Sans:wght@100;200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
+
+/*fonts*/
+
+:root {
+    --font-IMBPXMono: 'IBM Plex Mono', monospace;
+    --font-IBMPSans: 'IBM Plex Sans', sans-serif;
+    --font-IBMButton: 'IBM Plex Mono', monospace;
+}
+/*Colors*/
+
+:root {
+    --Colorprimary: #060A24;
+    --ColorPrincipal: #ffff;
+    --ColorHover: #00F3BB;
+    --Colordot: #0000EC;
+    --ColorBttnormal: #00F3BB;
+    --ColorBttHover: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 0 100px;
+    height: 50px;
+    background: #34495e;
+    bottom: 0;
+}
+
+.footer__container .copy {
+    font-family: var(--font-IMBPXMono);
+    font-size: 16px;
+    color: var(--Colorprimary);
+    margin-top: 15px;
+    color: #fff;
+}
+
+.copy:hover {
+    color: #7289da;
+    text-shadow: 0 0 30px #7289da;
+}
+
+.footer__container .sociales {
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.footer__container .sociales i {
+    font-size: 26px;
+    transition: 0.2s linear;
+    -webkit-transition: 0.2s linear;
+    -moz-transition: 0.2s linear;
+    -ms-transition: 0.2s linear;
+    -o-transition: 0.2s linear;
+    letter-spacing: 30px;
+}
+
+a {
+    color: #242424;
+    text-decoration: none;
+    border-radius: 15%;
+    -webkit-border-radius: 15%;
+    -moz-border-radius: 15%;
+    -ms-border-radius: 15%;
+    -o-border-radius: 15%;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+
+a::before {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    z-index: -1;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+
+a:nth-child(2)::before {
+    background: #c32aa3;
+}
+
+a:nth-child(3)::before {
+    background: #1da;
+}
+
+a:nth-child(4)::before {
+    background: #7289da;
+}
+
+a:nth-child(5)::before {
+    background: #1bf0f0;
+}
+
+a:hover::before {
+    transform: translateY(10px) scaleX(0.6) scaleY(0.8);
+    -webkit-transform: translateY(10px) scaleX(0.6) scaleY(0.8);
+    -moz-transform: translateY(10px) scaleX(0.6) scaleY(0.8);
+    -ms-transform: translateY(10px) scaleX(0.6) scaleY(0.8);
+    -o-transform: translateY(10px) scaleX(0.6) scaleY(0.8);
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+}
+
+a:hover:nth-child(1) {
+    color: #25d366;
+    text-shadow: 0 0 30px #25d366;
+}
+
+a:hover:nth-child(2) {
+    color: #c32aa3;
+    text-shadow: 0 0 30px #c32aa3;
+}
+
+a:hover:nth-child(3) {
+    color: #1da1f2;
+    text-shadow: 0 0 30px #1da1f2;
+}
+
+a:hover:nth-child(4) {
+    color: #2980b9;
+    text-shadow: 0 0 30px #2980b9;
+}
+
+a:hover:nth-child(5) {
+    color: #16d6bd;
+    text-shadow: 0 0 30px #16d6bd;
+}

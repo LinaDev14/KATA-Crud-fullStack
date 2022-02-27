@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {URL_API} from "../utils/Data";
+import {TodoTaskForm} from "./TodoTaskForm";
 
 const TodoTaskList = ({id, name}) => {
 
@@ -16,19 +17,6 @@ const TodoTaskList = ({id, name}) => {
                 setTaskList({...taskList, list: list})
                 //console.log(list)
             })
-
-        /*
-        try {
-            const RESPONSE = await fetch(URL_API + "/todos");
-            const DATA = await RESPONSE.json();
-
-            setTodoList(DATA.data)
-            console.log(DATA.data);
-
-        } catch (err) {
-            console.error(err)
-        }
-         */
     }
 
     useEffect(() => {
@@ -41,7 +29,7 @@ const TodoTaskList = ({id, name}) => {
             <div>{name}</div>
             {
                 taskList.list.map((task) => {
-                    return <div key={task.id}>{task.name}</div>
+                    return <TodoTaskForm key={task.id} task={task} />
                 })
             }
         </>
