@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 
 // import styles
 import styles from './TodoForm.module.css';
@@ -8,11 +8,14 @@ import task from '../images/task.svg';
 import {CreateTaskTodo} from '../Modals/CreateTaskTodo'
 import {CardTodo} from '../Card/CardTodo';
 import {URL_API} from "../utils/Data";
+import {TodoContext} from "../contexts/TodoContextProvider";
 
 const TodoForm = () => {
 
     const [modal, setModal] = useState(false);
     const [taskList, setTaskList] = useState([])
+
+    const { addTodo } = useContext(TodoContext)
 
     useEffect(() => {
         let arr = localStorage.getItem("taskList")
@@ -44,16 +47,16 @@ const TodoForm = () => {
         setModal(!modal);
     }
 
-    const saveTask = (taskObj) => {
+    const saveTask = (todoObject) => {
         fetch(URL_API + "/todo/create", {
             method: "POST",
-            body: JSON.stringify({name: taskObj.Name}),
+            body: JSON.stringify({name: todoObject.Name}),
             headers: {
                 'Content-Type': 'application/json'
             }
         })
             .then((response) => response.json())
-            .then()
+            .then((t) => addTodo(t))
         setModal(false)
     }
 

@@ -67,3 +67,7 @@
   background: #ecf0f1;
   color: #2c3e50;
 }
+
+.dark .card_wrapper{
+  background: #9c88ff;
+}

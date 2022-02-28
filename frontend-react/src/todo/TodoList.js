@@ -10,24 +10,18 @@ import styles from './TodoList.module.css';
 
 const TodoList = () => {
 
-    const listTodo = [];
-
-    const [todoList, setTodoList] = useState({list: listTodo});
-
-    const {todos, readTodos} = useContext(TodoContext)
+    const {todos} = useContext(TodoContext)
 
     // request
     const fetchData = () => {
-
-        fetch(URL_API + "/todos")
+        /*fetch(URL_API + "/todos")
             .then((response) => response.json())
             .then((list) => {
                 readTodos(list)
-            })
+            })*/
     }
 
     useEffect(() => {
-        fetchData();
     }, [])
 
     return(
