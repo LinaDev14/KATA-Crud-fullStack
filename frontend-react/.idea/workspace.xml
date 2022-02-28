@@ -6,13 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d8b04051-6f10-46a9-b374-05f32c177704" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card/CardTodo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card/CardTodo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Modals/EditTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/EditTask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Modals/EditTaskTodo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modals/EditTaskTodo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contexts/TodoContextProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/TodoContextProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contexts/TaskContextProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contexts/TaskContextProvider.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/todo/TodoForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/todo/TodoForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/todo/TodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/todo/TodoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/todoTask/TodoTaskForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/todoTask/TodoTaskForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/todoTask/TodoTaskList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/todoTask/TodoTaskList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +79,7 @@
       <workItem from="1645922416476" duration="1194000" />
       <workItem from="1645934791399" duration="8133000" />
       <workItem from="1645972426881" duration="27046000" />
-      <workItem from="1646005583901" duration="13799000" />
+      <workItem from="1646005583901" duration="15831000" />
     </task>
     <servers />
   </component>

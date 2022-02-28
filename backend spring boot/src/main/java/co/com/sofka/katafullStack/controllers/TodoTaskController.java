@@ -52,9 +52,9 @@ public class TodoTaskController {
     }
 
     // Actualizar task en tareas
-    // http://localhost:8080/api/task/updateTodo
-    @PutMapping("/task/updateTodo")
-    public TodoTask updateTodo(TodoTask todotask) {
+    // http://localhost:8080/api/task/updateTask
+    @PutMapping("/task/updateTask")
+    public TodoTask updateTodo(@RequestBody  TodoTask todotask) {
         Optional<TodoTask> TodoTaskData = todoTaskServices.findById(todotask.getId());
 
         if(TodoTaskData.isEmpty()){

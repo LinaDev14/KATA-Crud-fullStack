@@ -37,8 +37,23 @@ const TaskContextProvider = ({children}) =>{
         setTasks({...tasks, taskList: list})
     }
 
+    // editar tarea
+    const editTask = (task) => {
+        let list = tasks.taskList;
+        let taskEdit= [];
+        list.forEach((item) => {
+            if(item.id === task.id){
+                taskEdit.push(task)
+            }else{
+                taskEdit.push(item)
+            }
+        })
+        setTasks({...tasks, taskList: taskEdit })
+        console.log(taskEdit);
+    }
+
     return (
-        <TaskContext.Provider value={{tasks, addTask, readTasks, deleteTaskByTodoId, deleteTask}}>
+        <TaskContext.Provider value={{tasks, addTask, readTasks, deleteTaskByTodoId, deleteTask, editTask}}>
             {children}
         </TaskContext.Provider>
     )

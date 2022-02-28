@@ -38,12 +38,6 @@ public class TodoTaskServices {
 
     // Actualizar tarea
     public TodoTask updateTodo(TodoTask todotask) {
-        Optional<TodoTask> TodoTaskData = todoTaskRespository.findById(todotask.getId());
-
-        if(TodoTaskData.isEmpty()){
-            throw new IllegalArgumentException("La tarea no se encuentra en la base de datos");
-        }
-
         return todoTaskRespository.save(todotask);
     }
 

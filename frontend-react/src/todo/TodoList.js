@@ -7,13 +7,16 @@ import {TodoForm} from "./TodoForm";
 import {TodoContext} from "../contexts/TodoContextProvider";
 import {CardTodo} from "../Card/CardTodo";
 import styles from './TodoList.module.css';
+import {TaskContext} from "../contexts/TaskContextProvider";
 
 const TodoList = () => {
 
     const {todos, deleteTodo} = useContext(TodoContext)
+    const {editTask} = useContext(TaskContext)
+
 
     useEffect(() => {
-    }, [deleteTodo])
+    }, [deleteTodo, editTask])
 
     return(
         <>

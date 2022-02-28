@@ -3,12 +3,9 @@ import {URL_API} from "../utils/Data";
 import {TodoTaskForm} from "./TodoTaskForm";
 import {TaskContext} from "../contexts/TaskContextProvider";
 
-const TodoTaskList = ({id, name}) => {
+const TodoTaskList = ({id}) => {
 
-    let tasksList = [];
-    let [taskList, setTaskList] = useState({list: tasksList});
-
-    const {tasks, addTask, deleteTaskByTodoId, deleteTask} = useContext(TaskContext)
+    const {tasks, addTask, deleteTaskByTodoId, deleteTask, editTask} = useContext(TaskContext)
 
     let a = tasks.taskList.filter((element) => {
         return element.todoId === id
@@ -17,7 +14,7 @@ const TodoTaskList = ({id, name}) => {
 
     useEffect(() => {
 
-    }, [addTask, deleteTaskByTodoId, deleteTask])
+    }, [addTask, deleteTaskByTodoId, deleteTask, editTask])
 
     return(
         <>

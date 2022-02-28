@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { useForm } from "react-hook-form";
 import styles from './todoTaskForm.module.css'
 import {URL_API} from "../utils/Data";
@@ -13,7 +13,7 @@ const TodoTaskForm = ({task}) =>{
     const [modal, setModal] = useState(false);
     const [completed, setCompleted] = useState(task.completed)
 
-    const {deleteTask} = useContext(TaskContext);
+    const {deleteTask, editTask} = useContext(TaskContext);
 
     const toggle = () => {
         setModal(!modal)
@@ -28,10 +28,24 @@ const TodoTaskForm = ({task}) =>{
         setCompleted(!taskData.task.completed)
     }
 
-    const onEdit = () =>{
-        console.log("editing")
+    // editar tarea
+    const handleEditTask = (todoObject) => {
+        fetch(URL_API + "/task/updateTask",{
+            method: "PUT",
+            body: JSON.stringify({name: todoObject.Name, id: task.id, todoId: task.todoId, completed: task.completed}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        } )
+            .then((response) => response.json())
+            .then((t) => {
+                editTask(t)
+                console.log(t)
+            })
+        setModal(false)
     }
 
+    // eliminar tarea
     const onDelete = () =>{
         fetch(URL_API + "/task/delete/" + task.id,{
             method: "DELETE"
@@ -41,6 +55,9 @@ const TodoTaskForm = ({task}) =>{
             })
     }
 
+    useEffect(()=>{
+
+    },[editTask])
 
     return(
         <>
@@ -56,7 +73,7 @@ const TodoTaskForm = ({task}) =>{
             />
             <a className={styles.card_btnEditar}  onClick={() => setModal(true)}>editar ✏</a>
             <a className={styles.card_btnBorrar}  onClick={onDelete}>Borrar 🗑</a>
-            <EditTask modal = {modal} toggle = {toggle}/>
+            <EditTask modal = {modal} toggle = {toggle} edit={handleEditTask}/>
         </form>
             </>
     )
