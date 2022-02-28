@@ -1,17 +1,23 @@
-import {useContext, useState} from "react";
+import React, {useContext, useState} from "react";
 import { useForm } from "react-hook-form";
 import styles from './todoTaskForm.module.css'
 import {URL_API} from "../utils/Data";
 import {TaskContext} from "../contexts/TaskContextProvider";
+import {EditTask} from '../Modals/EditTask';
 
 const TodoTaskForm = ({task}) =>{
 
     const { register, handleSubmit, formState: { errors }} = useForm();
 
     const [taskData, setTaskData] = useState({task: task})
+    const [modal, setModal] = useState(false);
     const [completed, setCompleted] = useState(task.completed)
 
     const {deleteTask} = useContext(TaskContext);
+
+    const toggle = () => {
+        setModal(!modal)
+    }
 
     const onSubmit = (data, e) =>{
         e.preventDefault()
@@ -36,6 +42,7 @@ const TodoTaskForm = ({task}) =>{
     }
 
     return(
+        <>
         <form onSubmit={handleSubmit(onSubmit)}>
             <input
                 type="text"
@@ -46,9 +53,11 @@ const TodoTaskForm = ({task}) =>{
             <input
                 type="checkbox"
             />
-            <a className={styles.card_btnEditar}  onClick={onEdit}>editar ✏</a>
+            <a className={styles.card_btnEditar}  onClick={() => setModal(true)}>editar ✏</a>
             <a className={styles.card_btnBorrar}  onClick={onDelete}>Borrar 🗑</a>
+            <EditTask modal = {modal} toggle = {toggle}/>
         </form>
+            </>
     )
 }
 

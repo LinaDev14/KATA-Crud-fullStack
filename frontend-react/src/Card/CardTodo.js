@@ -2,6 +2,7 @@ import React, {useContext, useState} from "react";
 import { useForm } from "react-hook-form";
 // import component
 import {TodoTaskList} from "../todoTask/TodoTaskList";
+import {EditTaskTodo} from "../Modals/EditTaskTodo";
 
 //import styles
 import styles from './Card.module.css';
@@ -111,7 +112,7 @@ const CardTodo = ({index, todo}) => {
                 </div>
 
             </div>
-
+            <EditTaskTodo modal = {modal} toggle = {toggle}/>
         </div>
     )
 
