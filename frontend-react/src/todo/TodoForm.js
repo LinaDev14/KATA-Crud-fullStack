@@ -6,42 +6,15 @@ import styles from './TodoForm.module.css';
 import task from '../images/task.svg';
 //import components
 import {CreateTaskTodo} from '../Modals/CreateTaskTodo'
-import {CardTodo} from '../Card/CardTodo';
 import {URL_API} from "../utils/Data";
 import {TodoContext} from "../contexts/TodoContextProvider";
+
 
 const TodoForm = () => {
 
     const [modal, setModal] = useState(false);
-    const [taskList, setTaskList] = useState([])
 
     const { addTodo } = useContext(TodoContext)
-
-    useEffect(() => {
-        let arr = localStorage.getItem("taskList")
-
-        if(arr){
-            let obj = JSON.parse(arr)
-            setTaskList(obj)
-        }
-    }, [])
-
-
-    const deleteTask = (index) => {
-        let tempList = taskList
-        tempList.splice(index, 1)
-        localStorage.setItem("taskList", JSON.stringify(tempList))
-        setTaskList(tempList)
-        window.location.reload()
-    }
-
-    const updateListArray = (obj, index) => {
-        let tempList = taskList
-        tempList[index] = obj
-        localStorage.setItem("taskList", JSON.stringify(tempList))
-        setTaskList(tempList)
-        window.location.reload()
-    }
 
     const toggle = () => {
         setModal(!modal);
@@ -59,7 +32,6 @@ const TodoForm = () => {
             .then((t) => addTodo(t))
         setModal(false)
     }
-
 
     return (
         <>

@@ -1,7 +1,7 @@
 import React, { useState , useEffect} from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const EditTask = ({modal, toggle}) => {
+const EditTask = ({modal, toggle, editTask}) => {
 
 
     return (

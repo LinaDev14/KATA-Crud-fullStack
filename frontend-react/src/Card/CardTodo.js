@@ -16,7 +16,7 @@ const CardTodo = ({index, todo}) => {
     const [taskName, setTaskName] = useState("")
     const [task, setTask] = useState("");
     const {addTask, deleteTaskByTodoId} = useContext(TaskContext)
-    const {deleteTodo} = useContext(TodoContext)
+    const {deleteTodo, editTodo} = useContext(TodoContext)
 
 
     // colores de las cards
@@ -63,6 +63,7 @@ const CardTodo = ({index, todo}) => {
             .then((t) => addTask(t))
     }
 
+    // Eliminar Todo
     const handleDelete =() => {
         fetch(URL_API + "/todo/delete/" + todo.id,{
             method: "DELETE"
@@ -72,6 +73,23 @@ const CardTodo = ({index, todo}) => {
                 deleteTaskByTodoId(todo.id)
                 console.log(todo.id)
             })
+    }
+
+    // Editar Todo
+    const handleEdit = (todoObject) => {
+        fetch(URL_API + "/todo/update",{
+            method: "PUT",
+            body: JSON.stringify({name: todoObject.Name, id: todo.id}),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        } )
+            .then((response) => response.json())
+            .then((t) => {
+                editTodo(t)
+                console.log("editado")
+            })
+        setModal(false)
     }
 
     return (
@@ -112,7 +130,7 @@ const CardTodo = ({index, todo}) => {
                 </div>
 
             </div>
-            <EditTaskTodo modal = {modal} toggle = {toggle}/>
+            <EditTaskTodo modal = {modal} toggle = {toggle} edit={handleEdit}/>
         </div>
     )
 

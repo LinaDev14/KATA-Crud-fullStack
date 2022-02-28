@@ -20,7 +20,6 @@ const TodoList = () => {
             <TodoForm />
             {
                 todos.todoList.map((todo) => {
-                    //return <div key={todo.id}>{todo.name}</div>
 
                     return (
                         <>
