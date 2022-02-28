@@ -53,8 +53,8 @@ public class TodoController {
     }
 
     // Borrar una tarea
-    // http://localhost:8080/api/delete/{id}
-    @DeleteMapping("/delete/{id}")
+    // http://localhost:8080/api/todo/delete/{id}
+    @DeleteMapping("todo/delete/{id}")
     public void deleteById(@PathVariable Long id){
         todoServices.deleteById(id);
     }

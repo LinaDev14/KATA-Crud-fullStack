@@ -12,4 +12,6 @@ public interface TodoTaskRepository extends CrudRepository<TodoTask, Long> {
     List <TodoTask> findAllByTodoId(Long todoId);
     // Listar tareas todoTask
     List<TodoTask> findAll();
+
+    void deleteAllByTodoId(Long id);
 }

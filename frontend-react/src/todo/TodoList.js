@@ -10,19 +10,10 @@ import styles from './TodoList.module.css';
 
 const TodoList = () => {
 
-    const {todos} = useContext(TodoContext)
-
-    // request
-    const fetchData = () => {
-        /*fetch(URL_API + "/todos")
-            .then((response) => response.json())
-            .then((list) => {
-                readTodos(list)
-            })*/
-    }
+    const {todos, deleteTodo} = useContext(TodoContext)
 
     useEffect(() => {
-    }, [])
+    }, [deleteTodo])
 
     return(
         <>

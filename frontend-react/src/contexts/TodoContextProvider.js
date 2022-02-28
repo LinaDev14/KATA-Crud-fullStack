@@ -11,10 +11,20 @@ const TodoContextProvider = ({children}) =>{
 
     const [todos, setTodos] = useState(initialState)
 
-    const addTodo = (todo) =>{
+    const addTodo = (todo) => {
         let list = todos.todoList
         list.push(todo)
         setTodos({...todos, todoList: list })
+    }
+
+    const deleteTodo = (todoId) => {
+        let list = todos.todoList;
+        console.log(list)
+        const listDelete = list.filter((todo) => {
+            return todo.id !== todoId
+        })
+        setTodos({...todos, todoList: listDelete })
+
     }
 
     const readTodos = (list) =>{
@@ -22,7 +32,7 @@ const TodoContextProvider = ({children}) =>{
     }
 
     return (
-        <TodoContext.Provider value={{todos, addTodo, readTodos}}>
+        <TodoContext.Provider value={{todos, addTodo, readTodos, deleteTodo}}>
             {children}
         </TodoContext.Provider>
     )

@@ -2,6 +2,7 @@ package co.com.sofka.katafullStack.services;
 
 import co.com.sofka.katafullStack.models.Todo;
 import co.com.sofka.katafullStack.repositories.TodoRespository;
+import co.com.sofka.katafullStack.repositories.TodoTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,9 @@ public class TodoServices {
 
     @Autowired
     private TodoRespository todoRepository;
+
+    @Autowired
+    private TodoTaskRepository todoTaskRepository;
 
     // listar todas las tareas
     public List<Todo> listTodo(){
@@ -43,5 +47,6 @@ public class TodoServices {
     // borrar tarea
     public void deleteById(Long id){
         todoRepository.deleteById(id);
+        todoTaskRepository.deleteAllByTodoId(id);
     }
 }

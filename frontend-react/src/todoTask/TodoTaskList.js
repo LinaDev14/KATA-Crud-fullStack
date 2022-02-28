@@ -8,25 +8,16 @@ const TodoTaskList = ({id, name}) => {
     let tasksList = [];
     let [taskList, setTaskList] = useState({list: tasksList});
 
-    const {tasks, addTask} = useContext(TaskContext)
+    const {tasks, addTask, deleteTaskByTodoId, deleteTask} = useContext(TaskContext)
 
     let a = tasks.taskList.filter((element) => {
         return element.todoId === id
     })
 
-    // request
-    const fetchData = () => {
-        /*// http://localhost:8080/api/tasks/todoId/{id}
-        fetch(URL_API + "/tasks/todoId/" + id)
-            .then((response) => response.json())
-            .then((list) => {
-                setTaskList(list)
-            })*/
-    }
 
     useEffect(() => {
 
-    }, [addTask])
+    }, [addTask, deleteTaskByTodoId, deleteTask])
 
     return(
         <>

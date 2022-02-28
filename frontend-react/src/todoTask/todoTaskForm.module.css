@@ -5,6 +5,8 @@
     margin-left: 20px;
     margin-right: 15px;
     background: #f6e58d;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .card_btnEditar:hover{
@@ -18,6 +20,8 @@
     margin-left: 10px;
     margin-right: 15px;
     background: #ff7979;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .card_inputTask{

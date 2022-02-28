@@ -1,6 +1,8 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
 import { useForm } from "react-hook-form";
 import styles from './todoTaskForm.module.css'
+import {URL_API} from "../utils/Data";
+import {TaskContext} from "../contexts/TaskContextProvider";
 
 const TodoTaskForm = ({task}) =>{
 
@@ -8,6 +10,8 @@ const TodoTaskForm = ({task}) =>{
 
     const [taskData, setTaskData] = useState({task: task})
     const [completed, setCompleted] = useState(task.completed)
+
+    const {deleteTask} = useContext(TaskContext);
 
     const onSubmit = (data, e) =>{
         e.preventDefault()
@@ -23,7 +27,12 @@ const TodoTaskForm = ({task}) =>{
     }
 
     const onDelete = () =>{
-        console.log("deleting")
+        fetch(URL_API + "/task/delete/" + task.id,{
+            method: "DELETE"
+        } )
+            .then((t) => {
+                deleteTask(task.id)
+            })
     }
 
     return(

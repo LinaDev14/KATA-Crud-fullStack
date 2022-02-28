@@ -7,13 +7,15 @@ import {TodoTaskList} from "../todoTask/TodoTaskList";
 import styles from './Card.module.css';
 import {URL_API} from "../utils/Data";
 import {TaskContext} from "../contexts/TaskContextProvider";
+import {TodoContext} from "../contexts/TodoContextProvider";
 
 const CardTodo = ({index, todo}) => {
 
     const [modal, setModal] = useState(false);
     const [taskName, setTaskName] = useState("")
     const [task, setTask] = useState("");
-    const {addTask} = useContext(TaskContext)
+    const {addTask, deleteTaskByTodoId} = useContext(TaskContext)
+    const {deleteTodo} = useContext(TodoContext)
 
 
     // colores de las cards
@@ -60,6 +62,17 @@ const CardTodo = ({index, todo}) => {
             .then((t) => addTask(t))
     }
 
+    const handleDelete =() => {
+        fetch(URL_API + "/todo/delete/" + todo.id,{
+            method: "DELETE"
+        } )
+            .then((t) => {
+                deleteTodo(todo.id)
+                deleteTaskByTodoId(todo.id)
+                console.log(todo.id)
+            })
+    }
+
     return (
         <div className={styles.card_wrapper}>
             <div className={styles.card_top} style={{"backgroundColor": colors[0].primaryColor}}/>
@@ -74,7 +87,7 @@ const CardTodo = ({index, todo}) => {
                     <a className={styles.card_btn_Edit} style={{"color": colors[0].primaryColor, "cursor": "pointer"}}
                        onClick={() => setModal(true)}>Editar 📝
                     </a>
-                    <a className={styles.card_btn_Borrar} style={{"color": colors[0].primaryColor, "cursor": "pointer"}}
+                    <a className={styles.card_btn_Borrar} onClick={handleDelete} style={{"color": colors[1].primaryColor, "cursor": "pointer"}}
                     >Borrar 🗑
                     </a>
                 </div>
